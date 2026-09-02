@@ -55,7 +55,7 @@ export const CommunityCTASection: React.FC<CommunityCTAProps> = ({ onApplyWL }) 
 
             {/* Join Community */}
             <a
-              href={BUILDERHOOD_CONFIG.discordUrl}
+              href="https://discord.gg/r4v7JxS5w"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-slate-600 text-slate-200 font-mono text-sm flex items-center gap-2 transition-all"

@@ -32,9 +32,9 @@ interface ApplicationFormSectionProps {
 /* ============================================
    CAMPAIGN SOCIAL LINKS
 ============================================ */
-const X_ACCOUNT = '@BuilderHood';
-const X_ACCOUNT_LINK = 'https://x.com/BuilderHood';
-const POST_LINK = 'https://x.com/BuilderHood/status/123456789';
+const X_ACCOUNT = '@BuilderHooobds';
+const X_ACCOUNT_LINK = 'https://x.com/BuilderHooobds';
+const POST_LINK = 'https://x.com/BuilderHooobds';
 
 /* ============================================
    APPLICATION FORM SECTION

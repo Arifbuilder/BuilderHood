@@ -63,8 +63,8 @@ export const BUILDERHOOD_CONFIG = {
   collectionUrl: 'https://opensea.io', // Replace with real collection URL when live
 
   // Official Social & Community URLs
-  twitterHandle: '@BuilderHood',
-  twitterUrl: 'https://x.com',
+  twitterHandle: '@BuilderHooobds',
+  twitterUrl: 'https://x.com/BuilderHooobds',
   githubUrl: 'https://github.com',
   discordUrl: 'https://discord.gg',
   communityUrl: 'https://t.me',
