@@ -34,7 +34,7 @@ interface ApplicationFormSectionProps {
 ============================================ */
 const X_ACCOUNT = '@BuilderHooobds';
 const X_ACCOUNT_LINK = 'https://x.com/BuilderHooobds';
-const POST_LINK = 'https://x.com/BuilderHooobds';
+const POST_LINK = 'https://x.com/BuilderHooobds/status/2095171319012941958';
 
 /* ============================================
    APPLICATION FORM SECTION
