@@ -1,13 +1,42 @@
 import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { BUILDERHOOD_CONFIG } from '../config/builderhoodConfig';
 import { MessageSquare } from 'lucide-react';
 import { XIcon, GitHubIcon } from './Icons';
 
 interface FooterProps {
-  onApplyClick: () => void;
+  onApplyClick?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ onApplyClick }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleApply = () => {
+    if (onApplyClick) {
+      onApplyClick();
+    } else {
+      navigate('/apply');
+    }
+  };
+
+  const handleNav = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    if (href.startsWith('#')) {
+      const targetId = href.replace('#', '');
+      if (location.pathname === '/') {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        navigate(`/${href}`);
+      }
+    } else {
+      navigate(href);
+    }
+  };
+
   return (
     <footer className="bg-[#05070c] border-t border-slate-800/80 py-12 text-slate-400 font-mono text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,13 +72,13 @@ export const Footer: React.FC<FooterProps> = ({ onApplyClick }) => {
               </div>
               <ul className="space-y-1.5 text-slate-400 font-sans text-xs">
                 <li>
-                  <a href="#about" className="hover:text-emerald-400 transition-colors">About</a>
+                  <a href="#about" onClick={(e) => handleNav(e, '#about')} className="hover:text-emerald-400 transition-colors">About</a>
                 </li>
                 <li>
-                  <a href="#collection" className="hover:text-emerald-400 transition-colors">NFT Collection</a>
+                  <a href="#collection" onClick={(e) => handleNav(e, '#collection')} className="hover:text-emerald-400 transition-colors">NFT Collection</a>
                 </li>
                 <li>
-                  <a href="#roadmap" className="hover:text-emerald-400 transition-colors">Roadmap</a>
+                  <a href="#roadmap" onClick={(e) => handleNav(e, '#roadmap')} className="hover:text-emerald-400 transition-colors">Roadmap</a>
                 </li>
               </ul>
             </div>
@@ -61,17 +90,17 @@ export const Footer: React.FC<FooterProps> = ({ onApplyClick }) => {
               </div>
               <ul className="space-y-1.5 text-slate-400 font-sans text-xs">
                 <li>
-                  <button onClick={onApplyClick} className="hover:text-emerald-400 transition-colors text-left cursor-pointer">
+                  <button onClick={handleApply} className="hover:text-emerald-400 transition-colors text-left cursor-pointer">
                     WL Application
                   </button>
                 </li>
                 <li>
-                  <button onClick={onApplyClick} className="hover:text-emerald-400 transition-colors text-left cursor-pointer">
+                  <button onClick={handleApply} className="hover:text-emerald-400 transition-colors text-left cursor-pointer">
                     GTD Application
                   </button>
                 </li>
                 <li>
-                  <a href="#quests" className="hover:text-emerald-400 transition-colors">
+                  <a href="#quests" onClick={(e) => handleNav(e, '#quests')} className="hover:text-emerald-400 transition-colors">
                     Social Quests
                   </a>
                 </li>
